@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html class="fullpage">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto Insurance</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/calculator.css">
+    <link rel="stylesheet" type="text/css" href="css/custom.css">
+        <link rel="stylesheet" type="text/css" href="css/red.css">
+  </head>
+  <body>
+  <div ng-app="cal" ng-controller="calCtrl">
+        <header id="header" class="navbar-fixed-top navbar-inverse video-menu" role="banner">
+    	<div class="container">
+    		<!-- <div class="row"> -->
+                 <div class="navbar-header ">
+                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    <img src="images/telematics-car-insurance.png" alt="" style="width:200px;height:80px"class="img-responsive;">
+
+                 </div><!--Navbar header End-->
+                 	<nav class="collapse navbar-collapse navigation" id="bs-example-navbar-collapse-1" role="navigation">
+                        <ul class="nav navbar-nav navbar-right ">
+                           	<li style="padding-top:20px;"><a href="/" >Home </a></li>
+                            <li style="padding-top:20px;"><a href="/"  >Services</a> </li>
+                            <li style="padding-top:20px;"><a href="/" >About Us </a> </li>
+                            <li style="padding-top:20px;"><a href="/" >Contact Us</a> </li>
+                        </ul>
+                     </nav>
+                </div><!-- /.container-fluid -->
+                </header>
+                
+                <section id="home" class="hero landing hero-section">
+        <div class="video-background-container">
+            <video preload="auto" autoplay loop muted class="video-background">
+                <source type="video/mp4" src="videos/gdrive.mp4" />
+                <source type="video/ogg" src="videos/gdrive.ogv" />
+                <source type="video/webm" src="videos/gdrive.webm" />
+            </video>
+        </div> 
+
+        <div class="parallax-overlay"></div>
+
+        <div class="container">
+            <div class="hero-content text-center">
+                <div class="hero-text wow fadeIn" data-wow-delay=".8s">
+                    <h3 class="hero-title"><span>Auto Insurance</span> Make Life Easy</h3>
+                    <p class="hero-description">Use Telematic Data to Estimate the Driver Insurance </p>
+                    <p class="hero-buttons">
+                        <a href="/login" class="btn btn-main featured">
+                            <strong>Login</strong></i>
+                        </a>
+                         <a href="/signup" class="btn btn-main featured">
+                            <strong>Join Now </strong> </i>
+                        </a>
+                        <a href="/calculator" class="btn btn-main featured">
+                            <strong>Try for FREE </strong></i>
+                        </a>
+                    </p>
+                </div><!--/ Hero text end -->
+            </div><!--/ Hero content end -->
+        </div><!--/ Container end -->
+    </section><!--/ Home end -->
+    <div class="container">
+      <div class="price-box">
+        <div class="row">
+          <div class="col-sm-6">
+            <form name="Myform" class="form-horizontal form-pricing">
+              <div class="price-slider">
+                <h4 class="great">Telematic Data Value</h4>
+              <form method="post" action="" name="submit" enctype="multipart/form-data">
+                <input type="file" name="fileField" ng-model="filename"><br />
+                <button type="submit" ng-click="submit()" name="submit" class="btn btn-primary start">
+                  <i class="glyphicon glyphicon-upload"></i>
+                  <span style="color:white;">Start upload</span>
+                </button>
+              </form>
+              </div>
+              <div class="price-slider">
+                <h4 class="great">Age</h4>
+                <input type="number" min="0" ng-model="driverage" class="form-control" placeholder="Driver Age" required>
+              </div>
+              <div class="price-slider">
+                <h4 class="great">Gender</h4>
+                <br>
+                <div class="radio-inline">
+                    <label class="radiostyle">
+                      <input type="radio" name="optionsRadios" ng-model="radiooption" value="1" required>Male
+                    </label>
+                  </div>
+                  <div class="radio-inline">
+                    <label class="radiostyle">
+                      <input type="radio" name="optionsRadios" ng-model="radiooption" value="2" required>Female
+                    </label>
+                  </div>
+              </div>
+              <br>
+              <div class="price-slider">
+                <h4 class="great">Marital Status</h4>
+                <br>
+                <div class="radio-inline">
+                    <label class="radiostyle">
+                      <input type="radio" name="optionsRadios1" ng-model="radiooption1"  value="1" required>Single
+                    </label>
+                  </div>
+                  <div class="radio-inline">
+                    <label class="radiostyle">
+                      <input type="radio" name="optionsRadios1" ng-model="radiooption1" value="2" required>Married
+                    </label>
+                  </div>
+              </div>
+              <br>
+              <div class="price-slider">
+                <h4 class="great">Vehicle Age</h4>
+                <input type="number" min="0" ng-model="vehicleage" class="form-control" placeholder="Vehicle Age" required >
+              </div>
+            <br>
+             <div class="price-slider">
+                <h4 class="great">Vehicle Cost</h4>
+                <input type="number" min="0" ng-model="vehiclecost" class="form-control" placeholder="Vehicle Cost" required>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="price-form">
+                <div class="form-group">
+                    <div class="row">
+                      <div class="col-sm-6">
+                        <label for="amount_amirol" class="control-label">Annually ($): </label>
+                        <span class="help-text">Amount that you need to pay</span>
+                      </div>
+                      <div class="col-sm-6">
+                       <label>{{Annually}}</label>
+                      </div>
+                    </div>
+                  </div>
+                  <br>
+                <div class="form-group">
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <label for="amount_amirol" class="control-label">Monthly ($): </label>
+                      <span class="help-text">Amount that you need to pay</span>
+                    </div>
+                    <div class="col-sm-6">
+                      <label>{{Monthly}}</label>
+                    </div>
+                  </div>
+                </div>
+                <br>
+                <div class="form-group">
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <label for="amount_amirol" class="control-label">Weekly ($): </label>
+                      <span class="help-text">Amount that you need to pay</span>
+                    </div>
+                    <div class="col-sm-6">
+                       <label>{{Weekly}}</label>
+                    </div>
+                  </div>
+                </div>
+                <br>
+                <div style="margin-top:30px"></div>
+                <hr class="style">
+                <div class="form-group">
+                  <div class="col-sm-12">
+                    <button type="submit" ng-click="proceed()" ng-disabled="!Myform.$valid" class="btn btn-primary btn-lg btn-block">Proceed <span class="glyphicon glyphicon-chevron-right"></span></button>
+                  </div>
+                </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+	<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="angular/angular.min.js"></script>
+		<script>
+      var app = angular.module('cal', []);
+      app.controller('calCtrl', function($scope,$http) {
+        var max = 250;
+        var percentage = 0;
+        var tele = 0;
+        //alert(percentage);
+        //alert(tele);
+        
+        $scope.submit = function(){
+          tele = Math.random() ;
+        }
+        
+        $scope.proceed = function()
+        {
+           var driverage=$scope.driverage;
+           var gender=$scope.radiooption;
+           var maritalStatus=$scope.radiooption1;
+           var vehicleage=$scope.vehicleage;
+           var vehiclecost = $scope.vehiclecost;
+           
+           
+           if(tele > 0 && tele <= 0.3){
+              percentage = percentage + 15;
+           }
+           else if(tele > 0.3 && tele <= 0.5){
+             percentage = percentage + 10;
+           }
+          else if(tele > 0.5 && tele <= 0.8){
+             percentage = percentage + 5;
+           }
+           else if(tele > 0.8 && tele <= 1){
+             percentage = percentage + 3;
+           }
+           else{
+               percentage = percentage;
+               //alert(percentage);
+           }
+           if(driverage > 25 && driverage <= 60){
+             percentage = percentage + 10;
+           }
+           else if(driverage <= 25 ){
+             percentage = percentage + 20;
+           }
+           else if(driverage > 60 && driverage <= 100){
+             percentage = percentage + 15;
+           }
+           else{
+                percentage = percentage;
+           }
+           
+           if(vehicleage > 1 && vehicleage <= 5){
+             percentage = percentage + 10;
+           }
+           else if(vehicleage <= 1 ){
+             percentage = percentage + 5;
+           }
+           else if(vehicleage > 5 && vehicleage <= 8){
+             percentage = percentage + 15;
+           }
+           else{
+             percentage = percentage;
+           }
+           
+           
+           if(gender == 1){
+             percentage = percentage + 20;
+           }
+           else if(gender == 2){
+             percentage = percentage + 10;
+           }
+           else{
+               percentage = percentage;
+           }
+           
+            if(maritalStatus == 1){
+             percentage = percentage + 20;
+           }
+           else if(maritalStatus == 2){
+             percentage = percentage + 10;
+           }
+           else{
+                percentage = percentage;
+           }
+           if(vehiclecost >0 && vehiclecost<=4000){
+                percentage = percentage + 5;
+           }
+           else if(vehiclecost >4000 && vehiclecost<=20000){
+                percentage = percentage + 10;
+           }
+            else if(vehiclecost >20000 && vehiclecost<=50000){
+                percentage = percentage + 15;
+           }
+                       else if(vehiclecost >50000 && vehiclecost<=100000){
+                percentage = percentage + 20;
+           }
+           else{
+               percentage = percentage;
+           }
+           
+           //alert(percentage);
+           $scope.Monthly = Math.round((percentage/100)*max);
+           $scope.Annually = 12 *  $scope.Monthly;
+           $scope.Weekly =  Math.round($scope.Monthly / 4 );
+           
+           percentage = 0;
+           
+        }
+        
+      });
+    </script>
+  </body>
+</html>
